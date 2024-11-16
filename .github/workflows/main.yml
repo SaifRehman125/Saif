@@ -1,39 +1,39 @@
 name: Windows - Litemanager
 
 
-on:
+ on:
 
     workflow_dispatch:
 
 
-jobs:
+ jobs:
 
-  build:
+   build:
   
-     name: Start Building...
+      name: Start Building...
 
-     runs-on: window-latest
+       runs-on: window-latest
 
-     timeout-minutes: 9999
-
-
-
-      steps:
-
-        - name: Downloading & Installing Essentials
-
-          run:
-
-            Invoke-WebRequest -Url "https://github.com/chamod12/1m_win-10_github_rdp/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
-
-            cmd /c Download.bat
+        timeout-minutes: 9999
 
 
-             -name: Connect to LiteManager
 
-              run: cmd /c show.bat
+           steps:
+
+            - name: Downloading & Installing Essentials
+
+                run:
+
+                  Invoke-WebRequest -Url "https://github.com/chamod12/1m_win-10_github_rdp/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
+
+                     cmd /c Download.bat
 
 
-              - name: Time Counter
+                 -name: Connect to LiteManager
 
-              run: cmd /c loop.bat
+                run: cmd /c show.bat
+
+
+                - name: Time Counter
+
+                run: cmd /c loop.bat
